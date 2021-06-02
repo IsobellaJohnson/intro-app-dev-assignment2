@@ -7,8 +7,9 @@ import {
   Link
 } from "react-router-dom";
 //import { useTable } from "react-table";
-import Table from './TableContainer'
+import Table from './TableContainer';
 import './App.css';
+import apiPagination from './components/pagination';
 
 function App() {
 
@@ -175,6 +176,7 @@ function Reviewers() {
   return (
     <div className="App">
       <h1><center>Reviewers</center></h1>
+      <apiPagination/>
       <Table key={reviewerData.id} columns={columns2} data={reviewerData} />
     </div>
   );
