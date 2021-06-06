@@ -176,7 +176,6 @@ function Reviewers() {
   return (
     <div className="App">
       <h1><center>Reviewers</center></h1>
-      <apiPagination/>
       <Table key={reviewerData.id} columns={columns2} data={reviewerData} />
     </div>
   );
