@@ -9,7 +9,9 @@ import {
 //import { useTable } from "react-table";
 import Table from './TableContainer';
 import './App.css';
-import apiPagination from './components/pagination';
+// import paginationBasic from './components/pagination';
+
+
 
 function App() {
 
@@ -33,8 +35,7 @@ function App() {
           </ul>
         </nav>
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+        {}
         <Switch>
           <Route path="/movies">
             <Movies />
@@ -52,7 +53,8 @@ function App() {
       </div>
     </Router>
   );
-}
+  }
+
 
 function Home() {
   return <h2 class="welcome">Welcome</h2>;
@@ -99,8 +101,10 @@ function Movies() {
   )
   return (
     <div className="App">
-      <h1><center>Movies</center></h1>
-      <Table key={movieData.id} columns={columns} data={movieData} />
+      <h1>Movies</h1>
+      <Table key={movieData.id} columns={columns} data={movieData}> 
+      </Table>
+      
     </div>
   );
  
@@ -139,7 +143,7 @@ function Ratings() {
 
   return (
     <div className="App">
-      <h1><center>Ratings</center></h1>
+      <h1>Ratings</h1>
       <Table key={ratingData.id} columns={columns3} data={ratingData} />
     </div>
   );
@@ -175,10 +179,12 @@ function Reviewers() {
   )
   return (
     <div className="App">
-      <h1><center>Reviewers</center></h1>
-      <apiPagination/>
+      <h1>Reviewers</h1>
+      <paginationBasic/>
       <Table key={reviewerData.id} columns={columns2} data={reviewerData} />
     </div>
+
+    
   );
 
 }

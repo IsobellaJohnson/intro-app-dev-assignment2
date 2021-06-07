@@ -1,5 +1,6 @@
-import React from "react";
+import react from "react";
 import { useTable } from "react-table";
+import TestModal from "./components/modal";
 
 export default function Table({ columns, data }) {
 	const {
@@ -31,11 +32,22 @@ export default function Table({ columns, data }) {
 						<tr {...row.getRowProps()}>
 							{row.cells.map(cell => {
 								return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+								
 							})}
+							 <TestModal/>
+							  <button type="button" class="CRUDbtn U">
+							  &#9998;
+      						</button>
+							  <button type="button" class="CRUDbtn D"> 
+							  X
+      						</button>
+							 
 						</tr>
 					)
 				})}
+				
 			</tbody>
+      
 		</table>
 	)
 }

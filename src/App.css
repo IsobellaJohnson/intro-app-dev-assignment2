@@ -56,7 +56,25 @@ table th::before {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
 }
+h1{
+  text-align: center;
+}
+.CRUDbtn{
+  height: 25px;
+  width: 25px;
+  border: 1px solid gray;
+  margin-right: 5px;
 
+}
+.C{
+  background-color: lightgreen;
+}
+.U{
+  background-color: lightblue;
+}
+.D{
+  background-color: lightcoral;
+}
 .App {
   display: flex;
   flex-direction: column;
