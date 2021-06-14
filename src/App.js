@@ -9,6 +9,9 @@ import {
 //import { useTable } from "react-table";
 import Table from './TableContainer';
 import './App.css';
+import MovieModal from "./components/movieModal";
+import RatingModal from "./components/ratingModal";
+import ReviewerModal from "./components/reviewerModal";
 // import paginationBasic from './components/pagination';
 
 
@@ -102,8 +105,10 @@ function Movies() {
   return (
     <div className="App">
       <h1>Movies</h1>
-      <Table key={movieData.id} columns={columns} data={movieData}> 
+      
+      <Table key={movieData.id} columns={columns} data={movieData} modal={<MovieModal/>}> 
       </Table>
+
       
     </div>
   );
@@ -144,7 +149,7 @@ function Ratings() {
   return (
     <div className="App">
       <h1>Ratings</h1>
-      <Table key={ratingData.id} columns={columns3} data={ratingData} />
+      <Table key={ratingData.id} columns={columns3} data={ratingData} modal={<RatingModal/>} />
     </div>
   );
 }
@@ -172,7 +177,7 @@ function Reviewers() {
           {
             Header: "Last Name",
             accessor: "last_name"
-          },
+          },         
         ]
       }
     ]
@@ -181,7 +186,7 @@ function Reviewers() {
     <div className="App">
       <h1>Reviewers</h1>
       <paginationBasic/>
-      <Table key={reviewerData.id} columns={columns2} data={reviewerData} />
+      <Table key={reviewerData.id} columns={columns2} data={reviewerData} modal={<ReviewerModal/>} />
     </div>
 
     
