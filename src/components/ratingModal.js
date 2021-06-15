@@ -28,7 +28,7 @@ return (
       onAfterOpen={afterOpenModal}
       onRequestClose={closeModal}
       style={customStyles}
-      contentLabel="Example Modal"
+      contentLabel="Modal"
     >
 
       <h2 ref={_subtitle => (subtitle = _subtitle)}></h2>
@@ -42,8 +42,6 @@ return (
       
       <label for="year">Rating Date:</label>
       <input type="text" id="year" name="year" class="formInput"/>
-      
-
 
     <button class="addBtn" type="submit">Add</button>
   </form>
