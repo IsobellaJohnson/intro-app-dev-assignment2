@@ -6,13 +6,12 @@ import {
   Route,
   Link
 } from "react-router-dom";
-//import { useTable } from "react-table";
 import Table from './TableContainer';
 import './App.css';
 import MovieModal from "./components/movieModal";
 import RatingModal from "./components/ratingModal";
 import ReviewerModal from "./components/reviewerModal";
-// import paginationBasic from './components/pagination';
+import { render } from "@testing-library/react";
 
 
 
@@ -105,14 +104,10 @@ function Movies() {
   return (
     <div className="App">
       <h1>Movies</h1>
-      
       <Table key={movieData.id} columns={columns} data={movieData} modal={<MovieModal/>}> 
-      </Table>
-
-      
+      </Table>  
     </div>
-  );
- 
+  ); 
 }
 
 function Ratings() {
@@ -153,6 +148,7 @@ function Ratings() {
     </div>
   );
 }
+
 function Reviewers() {
   const [reviewerData, setReviewerData] = useState([]);
 
@@ -185,7 +181,6 @@ function Reviewers() {
   return (
     <div className="App">
       <h1>Reviewers</h1>
-      <paginationBasic/>
       <Table key={reviewerData.id} columns={columns2} data={reviewerData} modal={<ReviewerModal/>} />
     </div>
 
