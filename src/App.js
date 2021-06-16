@@ -81,12 +81,16 @@ function Movies() {
         Header: "Movies",
         columns: [
           {
+            Header: "id",
+            accessor: "id"
+          },
+          {
             Header: "Title",
             accessor: "title"
           },
           {
             Header: "Genre",
-            accessor: "genre",
+            accessor: "genre"
             
           },
           {
@@ -96,7 +100,7 @@ function Movies() {
           {
             Header: "Director",
             accessor: "director"
-          },
+          }
         ]
       }
     ]
@@ -128,6 +132,10 @@ function Ratings() {
       {
         Header: "Ratings",
         columns: [
+          {
+            Header: "id",
+            accessor: "id"
+          },
           {
             Header: "Rating Date",
             accessor: "ratingDate"
@@ -166,6 +174,10 @@ function Reviewers() {
       {
         Header: "Reviewers",
         columns: [
+          {
+            Header: "id",
+            accessor: "id"
+          },
           {
             Header: "First Name",
             accessor: "first_name"

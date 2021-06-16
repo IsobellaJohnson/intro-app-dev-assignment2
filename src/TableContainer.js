@@ -15,6 +15,8 @@ export default function MovieTable({ columns, data, modal }) {
 	})
 
 	return (
+		<>
+			{modal}
 		<table {...getTableProps()}>
 			<thead>
 				{headerGroups.map(headerGroup => (
@@ -36,7 +38,7 @@ export default function MovieTable({ columns, data, modal }) {
 								
 							})}							
 							<td>
-								{modal}
+								{/* {modal} */}
 							  <button type="button" class="CRUDbtn U">
 							  &#9998;
       						</button>
@@ -50,6 +52,7 @@ export default function MovieTable({ columns, data, modal }) {
 				
 			</tbody>
       
-		</table>		
+		</table>	
+		</>	
 	)
 }
