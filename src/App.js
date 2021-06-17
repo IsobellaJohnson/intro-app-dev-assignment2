@@ -20,7 +20,7 @@ function App() {
   return (
     <Router>
       <div>
-        <nav class="navBar">
+        <nav className="navBar">
           <ul>
             <li>
               <Link to="/">Home</Link>

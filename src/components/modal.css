@@ -8,5 +8,14 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
   }
-  
+  .addBtn{
+    background-color: lawngreen;
+    font-size: larger;
+    width:175px;
+    height:65px;
+    margin-bottom: 25px;
+    border: 5px lawngreen;
+    text-align: center;
+    line-height: 65px;  
+  }
   

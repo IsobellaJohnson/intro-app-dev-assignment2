@@ -22,6 +22,8 @@ import {useForm} from "react-hook-form";
     })
     function openModal() {
       setIsOpen(true);
+      
+    console.log(values.id)
     }
 
     const onSubmit = (data) => {
@@ -68,7 +70,7 @@ const handleSubmit = (e) => {
 
 return (
   <>
-    <button type="button" class="CRUDbtn C" onClick={openModal}>+</button>
+    <button type="button" class="addBtn" onClick={openModal}>Add Movie</button>
     <Modal
       isOpen={modalIsOpen}
       onAfterOpen={afterOpenModal}
@@ -102,7 +104,7 @@ return (
       <label for="reviewer">rating id:</label>
       <input type="text" id="director" name="director" class="formInput" value={values.rating_id} onChange={rating_id}/>
 
-    <button class="addBtn" type="submit">Add</button>
+    <button class="" type="submit">Add</button>
   </form>
     </Modal>
   </>
