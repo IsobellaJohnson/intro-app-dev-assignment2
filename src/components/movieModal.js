@@ -6,7 +6,6 @@ import customStyles from './customStyles'
 import axios from "axios";
 import {useForm} from "react-hook-form";
 
-//create post.js, place componentdidmount into form, import to modal? change data to the same params idk
 
   export default function MovieModal(){
     var subtitle;
@@ -22,24 +21,21 @@ import {useForm} from "react-hook-form";
     })
     function openModal() {
       setIsOpen(true);
-      
-    console.log(values.id)
     }
 
-    const onSubmit = (data) => {
-      console.log(data)
-    }
-
-    const postMovie = async () => {
-     await axios.post('https://introappdev.herokuapp.com/api/movies',values);
-}
+    // const onSubmit = (data) => {
+    //   console.log(data)
+    // }
+  
 function afterOpenModal() {
   // references are now sync'd and can be accessed.
   subtitle.style.color = '#f00';
 }
-
 function closeModal(){
   setIsOpen(false);
+}
+const postMovie = async () => {
+  await axios.post('https://introappdev.herokuapp.com/api/movies',values);
 }
 
 const title= (e)=>{
@@ -65,7 +61,6 @@ const handleSubmit = (e) => {
   e.preventDefault();
   postMovie()
   console.log(values)
-  // setSubmitted(true);
 }
 
 return (
