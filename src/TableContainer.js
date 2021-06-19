@@ -1,8 +1,7 @@
 import react from "react";
 import { useTable } from "react-table";
-import MovieModal from "./components/movieModal";
 
-export default function MovieTable({ columns, data, modal }) {
+export default function MovieTable({ columns, data, modal, DeleteModal, UpdateModal }) {
 	const {
 		getTableProps,
 		getTableBodyProps,
@@ -17,6 +16,8 @@ export default function MovieTable({ columns, data, modal }) {
 	return (
 		<>
 			{modal}
+
+			
 		<table {...getTableProps()}>
 			<thead>
 				{headerGroups.map(headerGroup => (
@@ -38,13 +39,10 @@ export default function MovieTable({ columns, data, modal }) {
 								
 							})}							
 							<td>
-								{/* {modal} */}
-							  <button type="button" class="CRUDbtn U">
-							  &#9998;
-      						</button>
-							  <button type="button" class="CRUDbtn D"> 
-							  X
-      						</button>
+							{UpdateModal} 
+							 
+						 {DeleteModal} 
+							  
 							  </td>
 						</tr>
 					)

@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useMemo } from "react";
-import ReactDOM from 'react-dom';
+import React, { useState } from "react";
 import Modal from 'react-modal';
 import './modal.css'
 import customStyles from './customStyles'
 import axios from "axios";
-import {useForm} from "react-hook-form";
+
 
 
   export default function MovieModal(){
@@ -92,7 +91,6 @@ return (
       <label for="year">Director:</label>
       <input type="text" id="director" name="director" class="formInput" value={values.director} onChange={director}/>
       
- 
       <label for="reviewer">reviewer id:</label>
       <input type="text" id="director" name="director" class="formInput" value={values.reviewer_id} onChange={reviewer_id}/>
  
