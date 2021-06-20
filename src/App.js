@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import Table from './TableContainer';
 import './App.css';
-import DeleteModal from "./components/delMovieModal"
 import UpdateModal from "./components/updateMovieModal"
 import UpdateModalrev from "./components/updateReviewerModal"
 import UpdateModalrate from "./components/updateRatingModal"
@@ -16,6 +15,7 @@ import MovieModal from "./components/movieModal";
 import RatingModal from "./components/ratingModal";
 import ReviewerModal from "./components/reviewerModal";
 import { render } from "@testing-library/react";
+import UpdateMovieModal from "./components/updateMovieModal";
 
 
 
@@ -116,7 +116,7 @@ function Movies() {
   return (
     <div className="App">
       <h1>Movies</h1>
-      <Table columns={columns} data={movieData} modal={<MovieModal/>} deleteItemFromState={deleteItemFromState} />
+      <Table columns={columns} data={movieData} modal={<MovieModal/>} updateModal={<UpdateMovieModal/>} deleteItemFromState={deleteItemFromState} />
     </div>
   ); 
 }
@@ -133,6 +133,11 @@ function Ratings() {
     })
     .catch((err) => console.log(err))
   }, []);
+
+  const deleteItemFromState = (id) => {
+    const updatedItems = ratingData.filter((item) => item.id !== id);
+    setRatingData(updatedItems);
+  };
 
   const columns3 = useMemo(
     () => [
@@ -159,7 +164,7 @@ function Ratings() {
   return (
     <div className="App">
       <h1>Ratings</h1>
-      <Table key={ratingData.id} columns={columns3} data={ratingData} modal={<RatingModal />} DeleteModal={<DeleteModal />} UpdateModal={<UpdateModalrate/>} />
+      <Table key={ratingData.id} columns={columns3} data={ratingData} modal={<RatingModal />} deleteItemFromState={deleteItemFromState} UpdateModal={<UpdateModalrate/>} />
     </div>
   );
 }
@@ -175,6 +180,11 @@ function Reviewers() {
       })
       .catch((err) => console.log(err))
   }, []);
+
+  const deleteItemFromState = (id) => {
+    const updatedItems = reviewerData.filter((item) => item.id !== id);
+    setReviewerData(updatedItems);
+  };
 
   const columns2 = useMemo(
     () => [
@@ -200,7 +210,7 @@ function Reviewers() {
   return (
     <div className="App">
       <h1>Reviewers</h1>
-      <Table key={reviewerData.id} columns={columns2} data={reviewerData} modal={<ReviewerModal/>} DeleteModal={<DeleteModal/>} UpdateModal={<UpdateModalrev/>} />
+      <Table key={reviewerData.id} columns={columns2} data={reviewerData} modal={<ReviewerModal/>} deleteItemFromState={deleteItemFromState} UpdateModal={<UpdateModalrev/>} />
     </div>
 
     

@@ -6,7 +6,7 @@ import axios from "axios";
 
 
 
-  export default function MovieModal(){
+  export default function MovieModal(props){
     var subtitle;
     const [modalIsOpen,setIsOpen] = React.useState(false);
     // const {register, handleSubmit} = useForm();
@@ -36,6 +36,9 @@ function closeModal(){
 const postMovie = async () => {
   await axios.post('https://introappdev.herokuapp.com/api/movies',values);
 }
+// function deleteMovie() {
+//   axios.delete(`https://introappdev.herokuapp.com/api/movies/${props.id}`);
+// }
 
 const title= (e)=>{
   setValues({...values,title:e.target.value})

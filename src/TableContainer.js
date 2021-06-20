@@ -21,6 +21,8 @@ export default function MovieTable({ columns, data, modal, DeleteModal, UpdateMo
 			console.log(`https://introappdev.herokuapp.com/api/movies/${data[id].id}`)
 			// Do a delete request with axios
 			const res = axios.delete(`https://introappdev.herokuapp.com/api/movies/${data[id].id}`)
+			const res2 = axios.delete(`https://introappdev.herokuapp.com/api/ratings/${data[id].id}`)
+			const res3 = axios.delete(`https://introappdev.herokuapp.com/api/reviewers/${data[id].id}`)
 			// Update state if status code is 202
 			if (res.status === 202) {
 				deleteItemFromState(data[id].id); 
@@ -57,7 +59,8 @@ export default function MovieTable({ columns, data, modal, DeleteModal, UpdateMo
 								
 							})}							
 							<td>
-								<button onClick={() => deleteItem(row.id)}>Delete</button>
+								<button class="CRUDbtn D" onClick={() => deleteItem(row.id)}>X</button>
+								{UpdateModal}
 							</td>
 						</tr>
 					)

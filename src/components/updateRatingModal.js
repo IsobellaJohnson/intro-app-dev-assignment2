@@ -4,7 +4,7 @@ import './modal.css'
 import customStyles from './customStyles'
 import axios from "axios";
 
-export default function UpdateRatingModal(){
+export default function UpdateMovieModal(){
     var subtitle;
     const [modalIsOpen,setIsOpen] = React.useState(false);
 
@@ -13,7 +13,7 @@ export default function UpdateRatingModal(){
       setIsOpen(true);
     }
 function updateMovie() {
-  axios.post('https://introappdev.herokuapp.com/api/Rating/');
+  axios.post('https://introappdev.herokuapp.com/api/movies/');
 }
   // const deleteMovie = () => {
      
@@ -36,7 +36,7 @@ const handleSubmit = (e) => {
 return (
   <>
       <button type="button" class="CRUDbtn U" onClick={openModal}> &#9998;</button>
-    <Modal
+      <Modal
       isOpen={modalIsOpen}
       onAfterOpen={afterOpenModal}
       onRequestClose={closeModal}
@@ -60,7 +60,6 @@ return (
   </form>
   
     </Modal>
-
   </>
 );
   }
