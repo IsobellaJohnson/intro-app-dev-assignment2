@@ -12,7 +12,7 @@ export default function MovieTable({ columns, data, modal, DeleteModal, UpdateMo
 		columns,
 		data,
 	})
-	
+
 
 	return (
 		<>
@@ -41,8 +41,7 @@ export default function MovieTable({ columns, data, modal, DeleteModal, UpdateMo
 							})}							
 							<td>
 							{UpdateModal} 
-							 
-						 {DeleteModal} 
+						 	{DeleteModal} 
 							  
 							  </td>
 						</tr>
