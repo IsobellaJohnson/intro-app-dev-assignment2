@@ -12,11 +12,12 @@ export default function MovieTable({ columns, data, modal, DeleteModal, UpdateMo
 		columns,
 		data,
 	})
+	
 
 	return (
 		<>
 			{modal}
-
+		
 			
 		<table {...getTableProps()}>
 			<thead>

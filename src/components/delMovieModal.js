@@ -7,14 +7,15 @@ import axios from "axios";
 export default function DelMovieModal(data){
     var subtitle;
     const [modalIsOpen,setIsOpen] = React.useState(false);
-    console.log(data.id)
+    console.log(data.data[3].id);
 
     // const {register, handleSubmit} = useForm();
     function openModal() {
       setIsOpen(true);
+     // console.log({data.id})
     }
-function deleteMovie() {
-  axios.delete('https://introappdev.herokuapp.com/api/movies/', data.id);
+    function deleteMovie() {
+  axios.delete('https://introappdev.herokuapp.com/api/movies/');
 }
   // const deleteMovie = () => {
      
@@ -30,7 +31,6 @@ function closeModal(){
 const handleSubmit = (e) => {
   e.preventDefault();
   deleteMovie()
-  console.log()
 }
 
 

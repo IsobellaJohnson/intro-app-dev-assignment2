@@ -70,13 +70,23 @@ function Movies() {
   const [movieData, setData] = useState([]);
 
   useEffect(() => {
-    axios("https://introappdev.herokuapp.com/api/movies")
-      .then((res) => {
+    axios("https://introappdev.herokuapp.com/api/movies/")
+      .then((res ) => {
         setData(res.data);
         console.log(res.data)
+        const id = 8;
+        console.log(movieData.id)
       })
       .catch((err) => console.log(err))
   }, []);
+
+//   axios("https://introappdev.herokuapp.com/api/movies")
+// .then(res => res.json())
+// .then (data => {
+//   setData(res.data)
+//   console.log(data)
+// })
+
 
    
   const columns = useMemo(
@@ -112,9 +122,7 @@ function Movies() {
   return (
     <div className="App">
       <h1>Movies</h1>
-      <DeleteModal data={movieData}/>
-      <Table key={movieData.id} columns={columns} data={movieData} modal={<MovieModal/>} DeleteModal={<DeleteModal/>} UpdateModal={<UpdateModal/>} />
-
+      <Table columns={columns} data={movieData} modal={<MovieModal/>} DeleteModal={<DeleteModal data={movieData}/>} UpdateModal={<UpdateModal/>} />
     </div>
   ); 
 }
