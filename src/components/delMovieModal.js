@@ -4,18 +4,19 @@ import './modal.css'
 import customStyles from './customStyles'
 import axios from "axios";
 
-export default function DelMovieModal(data){
+export default function DelMovieModal(props){
     var subtitle;
     const [modalIsOpen,setIsOpen] = React.useState(false);
-    console.log(data.data[3].id);
+    // console.log(data.data[3].id);
 
     // const {register, handleSubmit} = useForm();
     function openModal() {
       setIsOpen(true);
+      console.log(props.id)
      // console.log({data.id})
     }
     function deleteMovie() {
-  axios.delete('https://introappdev.herokuapp.com/api/movies/');
+  axios.delete(`https://introappdev.herokuapp.com/api/movies/${props.id}`);
 }
   // const deleteMovie = () => {
      

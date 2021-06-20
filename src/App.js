@@ -70,24 +70,17 @@ function Movies() {
   const [movieData, setData] = useState([]);
 
   useEffect(() => {
-    axios("https://introappdev.herokuapp.com/api/movies/")
-      .then((res ) => {
+    axios("https://introappdev.herokuapp.com/api/movies")
+      .then((res) => {
         setData(res.data);
-        console.log(res.data)
-        const id = 8;
-        console.log(movieData.id)
       })
       .catch((err) => console.log(err))
   }, []);
 
-//   axios("https://introappdev.herokuapp.com/api/movies")
-// .then(res => res.json())
-// .then (data => {
-//   setData(res.data)
-//   console.log(data)
-// })
-
-
+  const deleteItemFromState = (id) => {
+    const updatedItems = movieData.filter((item) => item.id !== id);
+    setData(updatedItems);
+  };
    
   const columns = useMemo(
     () => [
@@ -119,10 +112,11 @@ function Movies() {
       }
     ]
   )
+  
   return (
     <div className="App">
       <h1>Movies</h1>
-      <Table columns={columns} data={movieData} modal={<MovieModal/>} DeleteModal={<DeleteModal data={movieData}/>} UpdateModal={<UpdateModal/>} />
+      <Table columns={columns} data={movieData} modal={<MovieModal/>} deleteItemFromState={deleteItemFromState} />
     </div>
   ); 
 }
@@ -165,7 +159,7 @@ function Ratings() {
   return (
     <div className="App">
       <h1>Ratings</h1>
-      <Table key={ratingData.id} columns={columns3} data={ratingData} modal={<RatingModal/>} DeleteModal={<DeleteModal/>} UpdateModal={<UpdateModalrate/>} />
+      <Table key={ratingData.id} columns={columns3} data={ratingData} modal={<RatingModal />} DeleteModal={<DeleteModal />} UpdateModal={<UpdateModalrate/>} />
     </div>
   );
 }

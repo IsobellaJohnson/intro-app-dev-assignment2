@@ -1,7 +1,8 @@
 import react from "react";
 import { useTable } from "react-table";
+import axios from 'axios'
 
-export default function MovieTable({ columns, data, modal, DeleteModal, UpdateModal }) {
+export default function MovieTable({ columns, data, modal, DeleteModal, UpdateModal, deleteItemFromState }) {
 	const {
 		getTableProps,
 		getTableBodyProps,
@@ -12,6 +13,22 @@ export default function MovieTable({ columns, data, modal, DeleteModal, UpdateMo
 		columns,
 		data,
 	})
+
+	const deleteItem = (id) => {
+    let confirmDelete = window.confirm('Delete item forever?');
+		if (confirmDelete) {
+			console.log(data[id].id)
+			console.log(`https://introappdev.herokuapp.com/api/movies/${data[id].id}`)
+			// Do a delete request with axios
+			const res = axios.delete(`https://introappdev.herokuapp.com/api/movies/${data[id].id}`)
+			// Update state if status code is 202
+			if (res.status === 202) {
+				deleteItemFromState(data[id].id); 
+			} else {
+				console.log('Something went wrong')
+			}
+		}
+  };
 
 
 	return (
@@ -40,10 +57,8 @@ export default function MovieTable({ columns, data, modal, DeleteModal, UpdateMo
 								
 							})}							
 							<td>
-							{UpdateModal} 
-						 	{DeleteModal} 
-							  
-							  </td>
+								<button onClick={() => deleteItem(row.id)}>Delete</button>
+							</td>
 						</tr>
 					)
 				})}
