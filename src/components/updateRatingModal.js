@@ -4,7 +4,7 @@ import "./modal.css";
 import customStyles from "./customStyles";
 import axios from "axios";
 
-export default function UpdateMovieModal() {
+export default function UpdateRatingModal() {
   var subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
 

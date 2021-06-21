@@ -4,7 +4,7 @@ import "./modal.css";
 import customStyles from "./customStyles";
 import axios from "axios";
 
-export default function UpdateRatingModal(props) {
+export default function UpdateReviewerModal(props) {
   var subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [first_name, set_first_name] = useState("");
@@ -63,7 +63,7 @@ export default function UpdateRatingModal(props) {
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Movie Modal"
+        contentLabel="Update Modal"
       >
         <h2 ref={(_subtitle) => (subtitle = _subtitle)}></h2>
         <button onClick={closeModal}>X</button>
