@@ -63,7 +63,7 @@ function App() {
 
 
 function Home() {
-  return <h2 class="welcome">Welcome</h2>;
+  return <h2 className="welcome">Welcome</h2>;
 }
 
 function Movies() {

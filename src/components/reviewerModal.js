@@ -45,7 +45,7 @@ const handleSubmit = (e) => {
 
 return (
   <>
-    <button type="button" class="addBtn" onClick={openModal}>Add Reviewer</button>
+    <button type="button" className="addBtn" onClick={openModal}>Add Reviewer</button>
     <Modal
       isOpen={modalIsOpen}
       onAfterOpen={afterOpenModal}
@@ -57,17 +57,17 @@ return (
       <h2 ref={_subtitle => (subtitle = _subtitle)}></h2>
       <button onClick={closeModal}>X</button>
 
-      <form class="modalForm" action="" onSubmit={handleSubmit} enctype="multipart/form-data">
-    <h1 class="title">Add Reviewer</h1>
+      <form className="modalForm" action="" onSubmit={handleSubmit} enctype="multipart/form-data">
+    <h1 className="title">Add Reviewer</h1>
     
       <label for="name">First Name:</label>
-      <input type="text" id="name" name="name" class="formInput" value={values.first_name} onChange={first_name}/>
+      <input type="text" id="name" name="name" className="formInput" value={values.first_name} onChange={first_name}/>
       
       <label for="year">Last Name:</label>
-      <input type="text" id="year" name="year" class="formInput" value={values.last_name} onChange={last_name}/>
+      <input type="text" id="year" name="year" className="formInput" value={values.last_name} onChange={last_name}/>
 
 
-    <button class="addBtn" type="submit">Add</button>
+    <button className="addBtn" type="submit">Add</button>
   </form>
     </Modal>
   </>

@@ -1,7 +1,7 @@
 import react from "react";
 import { useTable } from "react-table";
 import axios from 'axios'
-
+import UpdateModalrow from "./components/updateReviewerModal"
 export default function MovieTable({ columns, data, modal, DeleteModal, UpdateModal, deleteItemFromState }) {
 	const {
 		getTableProps,
@@ -51,6 +51,7 @@ export default function MovieTable({ columns, data, modal, DeleteModal, UpdateMo
 			</thead>
 			<tbody {...getTableBodyProps()}>
 				{rows.map((row, i) => {
+							console.log(row.id);
 					prepareRow(row)
 					return (
 						<tr {...row.getRowProps()}>
@@ -59,8 +60,12 @@ export default function MovieTable({ columns, data, modal, DeleteModal, UpdateMo
 								
 							})}							
 							<td>
-								<button class="CRUDbtn D" onClick={() => deleteItem(row.id)}>X</button>
-								{UpdateModal}
+								<button className="CRUDbtn D" onClick={() => deleteItem(row.id)}>X</button>
+						
+								<UpdateModalrow 
+								id={row.id}
+								
+								/>
 							</td>
 						</tr>
 					)
