@@ -4,39 +4,56 @@ import "./modal.css";
 import customStyles from "./customStyles";
 import axios from "axios";
 
-export default function UpdateRatingModal() {
+export default function UpdateRatingModal(props) {
   var subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [ratingDate, setratingDate] = useState("");
+  const [rating, setrating] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [ratingData, setData] = useState(null);
+  
+  const handleSubmit = (e) => {
+    setLoading(true);
+    setIsError(false);
+    const ratingData = {
+      ratingDate: ratingDate,
+      rating: rating,
+    };
+    e.preventDefault();
+    axios
+    .put(
+      `https://introappdev.herokuapp.com/api/ratings/${props.id}`,
+        ratingData
+    )
+    .then((res) => {
+      setData(res.ratingData);
+      setratingDate("");
+      setrating("");
+      setLoading(false);
+      window.location.reload();
+    })
+    .catch((err) => {
+      setLoading(false);
+      setIsError(true);
+    });
+  console.log(ratingData);
+};
 
-  // const {register, handleSubmit} = useForm();
   function openModal() {
     setIsOpen(true);
   }
-  function updateMovie() {
-    axios.post("https://introappdev.herokuapp.com/api/movies/");
-  }
-  // const deleteMovie = () => {
-
-  // }
   function afterOpenModal() {
-    // references are now sync'd and can be accessed.
     subtitle.style.color = "#f00";
   }
   function closeModal() {
     setIsOpen(false);
   }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    updateMovie();
-    console.log();
-  };
-
   return (
     <>
       <button type="button" className="CRUDbtn U" onClick={openModal}>
         {" "}
-        &#9998;
+        Update Rating
       </button>
       <Modal
         isOpen={modalIsOpen}
@@ -54,10 +71,26 @@ export default function UpdateRatingModal() {
           enctype="multipart/form-data"
         >
           <h1>Update Rating:</h1>
-          <label for="fname">Rating</label>
-          <input type="text" id="fname" name="fname"></input>
-          <label for="lname">Rating date</label>
-          <input type="text" id="lname" name="lname"></input>
+          <div>
+            <input
+              type="text"
+              className="form-control"
+              id="ratingDate"
+              placeholder="Enter rating date"
+              value={ratingDate}
+              onChange={(e) => setratingDate(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              className="form-control"
+              id="rating"
+              placeholder="Enter new rating"
+              value={rating}
+              onChange={(e) => setrating(e.target.value)}
+            />
+          </div>
 
           <button className="" type="submit">
             Confirm Changes

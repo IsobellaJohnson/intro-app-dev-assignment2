@@ -16,6 +16,7 @@ import RatingModal from "./components/ratingModal";
 import ReviewerModal from "./components/reviewerModal";
 import { render } from "@testing-library/react";
 import UpdateMovieModal from "./components/updateMovieModal";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 

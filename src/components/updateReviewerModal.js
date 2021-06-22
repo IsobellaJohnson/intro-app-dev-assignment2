@@ -39,12 +39,11 @@ export default function UpdateReviewerModal(props) {
       });
     console.log(revData);
   };
-  // const {register, handleSubmit} = useForm();
+
   function openModal() {
     setIsOpen(true);
   }
   function afterOpenModal() {
-    // references are now sync'd and can be accessed.
     subtitle.style.color = "#f00";
   }
   function closeModal() {
@@ -55,7 +54,7 @@ export default function UpdateReviewerModal(props) {
     <>
       <button type="button" className="CRUDbtn U" onClick={openModal}>
         {" "}
-        &#9998;
+        Update Reviewer
       </button>
 
       <Modal

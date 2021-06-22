@@ -60,20 +60,18 @@ h1{
   text-align: center;
 }
 .CRUDbtn{
-  height: 25px;
-  width: 25px;
   border: 1px solid gray;
   margin-right: 5px;
-
-}
-.C{
-
 }
 .U{
   background-color: lightblue;
+  width: 70px;
+  font-size: 15px;
 }
 .D{
   background-color: lightcoral;
+  height: 25px;
+  width: 25px;
 }
 .App {
   display: flex;
@@ -81,3 +79,6 @@ h1{
   padding: 20px;
   color: #00000094
 }
+
+
+
