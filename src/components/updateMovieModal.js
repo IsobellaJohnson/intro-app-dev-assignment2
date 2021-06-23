@@ -61,7 +61,7 @@ export default function UpdateMovieModal(props) {
     <>
       <button type="button" className="CRUDbtn U" onClick={openModal}>
         {" "}
-        Update Movie
+        Edit
       </button>
       <Modal
         isOpen={modalIsOpen}

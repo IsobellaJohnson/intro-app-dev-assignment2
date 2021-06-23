@@ -1,8 +1,6 @@
 import react from "react";
 import { useTable } from "react-table";
 import axios from "axios";
-import UpdateModalrow from "./components/updateReviewerModal";
-import UpdateRatingModal from "./components/updateRatingModal";
 import UpdateMovieModal from "./components/updateMovieModal";
 export default function MovieTable({
   columns,
@@ -33,12 +31,6 @@ export default function MovieTable({
       // Do a delete request with axios
       const res = axios.delete(
         `https://introappdev.herokuapp.com/api/movies/${data[id].id}`
-      );
-      const res2 = axios.delete(
-        `https://introappdev.herokuapp.com/api/ratings/${data[id].id}`
-      );
-      const res3 = axios.delete(
-        `https://introappdev.herokuapp.com/api/reviewers/${data[id].id}`
       );
       // Update state if status code is 202
       if (res.status === 202) {
@@ -84,8 +76,6 @@ export default function MovieTable({
                     X
                   </button>
                   <UpdateMovieModal/>
-                  <UpdateModalrow id={row.id} />
-				          <UpdateRatingModal id={row.id} />
                 </td>
               </tr>
             );

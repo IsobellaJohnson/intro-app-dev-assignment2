@@ -54,7 +54,7 @@ export default function UpdateReviewerModal(props) {
     <>
       <button type="button" className="CRUDbtn U" onClick={openModal}>
         {" "}
-        Update Reviewer
+        Edit
       </button>
 
       <Modal

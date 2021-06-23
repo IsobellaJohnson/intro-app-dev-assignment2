@@ -53,7 +53,7 @@ export default function UpdateRatingModal(props) {
     <>
       <button type="button" className="CRUDbtn U" onClick={openModal}>
         {" "}
-        Update Rating
+        Edit
       </button>
       <Modal
         isOpen={modalIsOpen}

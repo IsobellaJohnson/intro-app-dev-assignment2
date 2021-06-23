@@ -6,7 +6,9 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Table from './TableContainer';
+import MovieTable from './MovieTableContainer';
+import RatingTable from './RatingTableContainer';
+import ReviewerTable from './ReviewerTableContainer';
 import './App.css';
 import UpdateModal from "./components/updateMovieModal"
 import UpdateModalrev from "./components/updateReviewerModal"
@@ -117,7 +119,7 @@ function Movies() {
   return (
     <div className="App">
       <h1>Movies</h1>
-      <Table columns={columns} data={movieData} modal={<MovieModal/>} updateModal={<UpdateMovieModal/>} deleteItemFromState={deleteItemFromState} />
+      <MovieTable columns={columns} data={movieData} modal={<MovieModal/>} updateModal={<UpdateMovieModal/>} deleteItemFromState={deleteItemFromState} />
     </div>
   ); 
 }
@@ -165,7 +167,7 @@ function Ratings() {
   return (
     <div className="App">
       <h1>Ratings</h1>
-      <Table key={ratingData.id} columns={columns3} data={ratingData} modal={<RatingModal />} deleteItemFromState={deleteItemFromState} UpdateModal={<UpdateModalrate/>} />
+      <RatingTable key={ratingData.id} columns={columns3} data={ratingData} modal={<RatingModal />} deleteItemFromState={deleteItemFromState} UpdateModal={<UpdateModalrate/>} />
     </div>
   );
 }
@@ -211,7 +213,7 @@ function Reviewers() {
   return (
     <div className="App">
       <h1>Reviewers</h1>
-      <Table key={reviewerData.id} columns={columns2} data={reviewerData} modal={<ReviewerModal/>} deleteItemFromState={deleteItemFromState} UpdateModal={<UpdateModalrev/>} />
+      <ReviewerTable key={reviewerData.id} columns={columns2} data={reviewerData} modal={<ReviewerModal/>} deleteItemFromState={deleteItemFromState} UpdateModal={<UpdateModalrev/>} />
     </div>
 
     
