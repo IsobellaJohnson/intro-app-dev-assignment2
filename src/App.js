@@ -10,14 +10,12 @@ import MovieTable from './MovieTableContainer';
 import RatingTable from './RatingTableContainer';
 import ReviewerTable from './ReviewerTableContainer';
 import './App.css';
-import UpdateModal from "./components/updateMovieModal"
+import UpdateMovieModal from "./components/updateMovieModal";
 import UpdateModalrev from "./components/updateReviewerModal"
 import UpdateModalrate from "./components/updateRatingModal"
 import MovieModal from "./components/movieModal";
 import RatingModal from "./components/ratingModal";
 import ReviewerModal from "./components/reviewerModal";
-import { render } from "@testing-library/react";
-import UpdateMovieModal from "./components/updateMovieModal";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 

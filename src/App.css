@@ -1,3 +1,7 @@
+.navBar{
+text-decoration: none;
+color: blueviolet
+}
 ul {
   list-style-type: none;
   margin: 0;
@@ -19,7 +23,8 @@ li a {
 }
 
 li a:hover {
-  background-color: #111;
+  background-color: #ededed;
+  text-decoration: none;
 }
 .welcome{
   text-align: center;

@@ -1,4 +1,3 @@
-import react from "react";
 import { useTable } from "react-table";
 import axios from "axios";
 import UpdateMovieModal from "./components/updateMovieModal";
@@ -6,8 +5,6 @@ export default function MovieTable({
   columns,
   data,
   modal,
-  DeleteModal,
-  UpdateModal,
   deleteItemFromState,
 }) {
   const {
