@@ -1,6 +1,7 @@
 import { useTable } from "react-table";
 import axios from "axios";
 import UpdateRatingModal from "./components/updateRatingModal";
+
 export default function MovieTable({
   columns,
   data,
